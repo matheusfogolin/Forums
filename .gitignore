@@ -2,7 +2,16 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
 db.sqlite3
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
 
 # C extensions
 *.so
