@@ -1,0 +1,30 @@
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Sub-forums</h1>
+            </div>
+
+            {% for categorie in categories %}
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa fa-car center"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="{{categorie.get_url}}">{{categorie.title}}</a></h4>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>{{categorie.post_count}} Posts</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="{{categorie.last_post.get_url}}">Último post</a></b> por {{categorie.last_post.user.full_name}}
+                    <br> em <small>{{categorie.last_post.date|date}}</small>
+                </div>
+            </div>
+            {% endfor %}
+        
+    </div>
+
+    {% endblock content %}
