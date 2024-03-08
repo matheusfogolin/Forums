@@ -39,7 +39,7 @@ python manage.py runserver
 Ele estará disponível na url http://127.0.0.1:8000/. Para acessar o painel do admin, o link é http://127.0.0.1:8000/admin.
 
 ## Com docker:
-##Requisitos:
+## Requisitos:
   - Docker desktop
 Para executar o projeto utilizando o docker, é bem simples. Precisamos abrir o prompt de comando, navegar até a pasta do repositório e executar o seguinte comando, para criar a imagem docker:
 docker build -t <nome_do_container> .
