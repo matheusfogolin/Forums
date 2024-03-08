@@ -3,14 +3,11 @@
 {% block content %}
     
     <div class="container">
-        <!--Navigation-->
         <div class="navigate">
             <span><a href="{% url 'home' %}">Página Inicial - Forum</a> >> <a href="{{post.categories.all.0.get_url}}">{{post.categories.all.0}}</a> >> <a href="{{post.get_url}}"> {{post.title}}</a></span>
         </div>
 
-        <!--Topic Section-->
         <div class="topic-container">
-            <!--Original thread-->
             <div class="head">
                 <div class="authors">Autor</div>
                 <div class="content">Tópico: {{post.title}} (Lido {% get_hit_count for post %} Vezes)</div>
@@ -39,7 +36,6 @@
             </div>
         </div>
 
-        <!--Comment Area-->
         <form action="." method="post">
             {% if request.user.is_authenticated %}
             {% csrf_token %}
@@ -50,7 +46,6 @@
         </form>
         {% endif %}
 
-        <!--Comments Section-->
 
         {% for comment in post.comments.all %}
 
@@ -74,7 +69,6 @@
                 </div>
             </div>
         </div>
-        <!--Reply Area-->
         <form action="." method="post">
             {% csrf_token %}
             <div class="comment-area hide" id="comment{{comment.id}}">
@@ -83,7 +77,6 @@
                 <input type="hidden" name="comment-id" value={{comment.id}}>
             </div>
         </form>
-        <!--Reply Section-->
         {% for reply in comment.replies.all %}
         <div class="comments-container" style = "width: 95%; margin-left: 5%;">
             <div class="body">
