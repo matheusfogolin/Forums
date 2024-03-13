@@ -1,6 +1,4 @@
-/* ########################################### */
-/*                 Global                      */
-/* ########################################### */
+
 *{
     box-sizing: border-box;
 }
@@ -24,9 +22,7 @@ h1{
 }
 
 
-/* ########################################### */
-/*           Forums.html                       */
-/* ########################################### */
+
 .container{
     margin: 20px;
     padding: 20px;
@@ -74,7 +70,7 @@ h1{
 }
 
 
-/* For the smartphones */
+
 @media screen and (max-width: 460px) {
     .container{
         margin: 10px;
@@ -98,7 +94,7 @@ h1{
 
   }
 
-/* For the tablets */
+
 @media screen and (min-width: 460px) and (max-width: 1024px) {
     .container{
         margin: 15px;
@@ -123,12 +119,12 @@ h1{
     }
 
   }
-/*   Header Section    */
+
 
 header{
     margin-inline: 10px;
 }
-  /* Nav Bar styles */
+
 .navbar{
     display:flex;
     align-items: center;
@@ -191,7 +187,7 @@ header{
     font-family:aquire;
 }
 
-/*Navbar for the smartphones*/
+
 @media screen and (max-width: 460px){
     .navigation{
         max-height: auto;
@@ -219,7 +215,7 @@ header{
     }
 }
 
-  /* Search Box styles */
+
 .search-box{
     border: solid 1px #52057b;
     margin-top: 20px;
@@ -249,7 +245,7 @@ header{
     box-shadow: 1px 2px 3px #fff;
 }
 
-/* search box for smrtphones */
+
 @media screen and (max-width: 460px){
     .search-box input, .search-box button, .search-box select{
         min-width: 300px;
@@ -258,7 +254,7 @@ header{
 
 }
 
-/* forum info Styling */
+
 .forum-info{
     padding: 20px;
     background-color: #111314;
@@ -268,7 +264,7 @@ header{
     font-size:20px;
     font-weight:bold;
 }
-/* Footer Styling */
+
 
 footer{
     margin-top: 20px;
@@ -278,11 +274,6 @@ footer{
     text-align: center;
 }
 
-/* ########################################### */
-/*            posts.html                       */
-/* ########################################### */
-
-/* posts table's head  */
 .table-head{
     display: flex;
 }
@@ -309,8 +300,6 @@ footer{
 .table-head .last-reply{
     flex: 15%;
 }
-
-/* posts table's body  */
 
 .table-row{
     display: flex;
@@ -340,7 +329,7 @@ footer{
     flex: 15%;
 }
 
-/* navigation path*/
+
 .navigate{
     margin-block: 20px;
     font-weight: lighter;
@@ -356,7 +345,7 @@ footer{
     font-weight: bolder;
 }
 
-/* Pagination*/
+
 
 .pagination{
     padding: 20px;
@@ -385,10 +374,6 @@ footer{
     margin-block: 5px;
 }
 
-
-/* ########################################### */
-/*            detail.html                      */
-/* ########################################### */
 
 .head{
     display: flex;
@@ -431,7 +416,6 @@ footer{
     float: right;
 }
 
-/* comment section */
 .comment-area{
     margin-bottom:50px;
 }

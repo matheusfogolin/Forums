@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import signup, signin, update_profile, logout, create_profile
+from .views import signup, signin, update_profile, logout
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("signup/", signup, name="signup"),

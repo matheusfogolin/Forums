@@ -35,6 +35,9 @@
             <div style="font-size: 30px; font-weight: 300px; margin-left: 100px;">Bem-vindo, {{user.email}}</div>
             <div style="font-size: 50px; font-weight: 300px; margin-left: 100px;"><a href="{% url 'create_post' %}">Criar Post</a></div>
             {% endif %}
+            {% if not user.is_authenticated %}
+            <div style="font-size: 50px; font-weight: 300px; margin-left: 100px;"><a href="{% url 'signin' %}">Criar Post</a></div>
+            {% endif %}
         </div>
     </header>
 

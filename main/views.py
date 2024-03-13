@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render, get_object_or_404
 
 from main.forms import PostForm
-from .models import Author, Category, Post, Comment, Reply
+from .models import Category, Post, Comment, Reply #Author
+from registration.models import User
 from .utils import update_views
 from django.contrib.auth.decorators import login_required
 
@@ -17,7 +18,7 @@ def details(request, slug):
     post = get_object_or_404(Post, slug=slug)   
     
     if request.user.is_authenticated:
-        author = Author.objects.get(user=request.user)
+        author = User.objects.get(email=request.user.email)
     
     if "comment-form" in request.POST:
         comment = request.POST.get("comment")
@@ -56,9 +57,9 @@ def create_post(request):
     
     if request.method == "POST":
         if form.is_valid():
-            author = Author.objects.get(user=request.user)
+            user = User.objects.get(email=request.user.email)
             new_post = form.save(commit=False)
-            new_post.user = author
+            new_post.user = user
             new_post.save()
             form.save_m2m()
             return redirect("home")

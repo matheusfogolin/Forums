@@ -4,7 +4,7 @@
 
 <h1 style = "text-align:center; margin-block:50px; color:red;">Criar uma conta</h1>
 
-<form method="POST", action="." style="margin-left:50px;">
+<form method="POST", action="." style="margin-left:50px;" enctype="multipart/form-data">
     {% csrf_token %}
     {{form|crispy}}
     <input type="submit" value = "Cadastrar" style="margin-block:50px;">

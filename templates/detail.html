@@ -15,12 +15,10 @@
 
             <div class="body">
                 <div class="authors">
-                    <div class="username"><a href="">{{post.user.full_name|title}}</a></div>
+                    <div class="username">{{post.user.full_name}}</div>
                     {% if post.user.profile_pic %}
                     <img src="{{post.user.profile_pic.url}}" alt="">
                     {% endif %}
-                    <div>Posts: <u>{{post.user.num_posts}}</u></div>
-                    <div>Pontos: <u>{{post.user.points}}</u></div>
                     <div>{{post.date|date}}</div>
                 </div>
                 <div class="content">
@@ -29,23 +27,28 @@
                     <hr>
 
                     <br>
+                    {% if request.user.is_authenticated %}
                     <div class="comment">
                         <button onclick="showComment()">Adicionar Comentário</button>
                     </div>
+                    {% else %}
+                    <div class="comment">
+                        <button><a href="{% url 'signin' %}">Logue para comentar</a></button>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
-
+        {% if request.user.is_authenticated %}
         <form action="." method="post">
-            {% if request.user.is_authenticated %}
             {% csrf_token %}
             <div class="comment-area hide" id="comment-area">
                 <textarea name="comment" id="" placeholder="Escreva seu comentário aqui... "></textarea>
                 <input type="submit" value="Comentar" name="comment-form">
             </div>
         </form>
+        
         {% endif %}
-
 
         {% for comment in post.comments.all %}
 
@@ -56,27 +59,32 @@
                     {% if comment.user.profile_pic %}
                     <img src="{{comment.user.profile_pic.url}}" alt="">
                     {% endif %}
-                    <div>Posts: <u>{{comment.user.num_posts}}</u></div>
-                    <div>Pontos: <u>{{comment.user.points}}</u></div>
                     <div>{{comment.date|date}}</div>
                 </div>
                 <div class="content">
                     {{comment.content}}
                     <br>
+                    {% if request.user.is_authenticated %}
                     <div class="comment">
                         <button onclick="showReply('comment{{comment.id}}')">Responder</button>
                     </div>
+                    {% else %}
+                    <div class="comment">
+                        <button><a href="{% url 'signin' %}">Logue para responder</a></button>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <form action="." method="post">
             {% csrf_token %}
             <div class="comment-area hide" id="comment{{comment.id}}">
-                <textarea name="reply" id="" placeholder="reply here ... "></textarea>
+                <textarea name="reply" id="" placeholder="Responda aqui..."></textarea>
                 <input type="submit" value="Responder" name = "reply-form">
                 <input type="hidden" name="comment-id" value={{comment.id}}>
             </div>
         </form>
+        
         {% for reply in comment.replies.all %}
         <div class="comments-container" style = "width: 95%; margin-left: 5%;">
             <div class="body">
@@ -85,8 +93,6 @@
                     {% if reply.user.profile_pic %}
                     <img src="{{reply.user.profile_pic.url}}" alt="">
                     {% endif %}
-                    <div>Posts: <u>{{reply.user.num_posts}}</u></div>
-                    <div>Pontos: <u>{{reply.user.points}}</u></div>
                     <div>{{reply.date|date}}</div>
                 </div>
                 <div class="content">

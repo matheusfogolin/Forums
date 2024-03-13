@@ -1,4 +1,3 @@
-//NavBar
 function hideIconBar(){
     var iconBar = document.getElementById("iconBar");
     var navigation = document.getElementById("navigation");
@@ -13,13 +12,11 @@ function showIconBar(){
     navigation.classList.add("hide");
 }
 
-//Comment
 function showComment(){
     var commentArea = document.getElementById("comment-area");
     commentArea.classList.remove("hide");
 }
 
-//Reply
 function showReply(id){
     var replyArea = document.getElementById(id);
     replyArea.classList.remove("hide");
