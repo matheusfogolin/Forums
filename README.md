@@ -1,11 +1,6 @@
 # Forums
 Projeto de forum criado com Django.
 
-Observação:
-Para testes com usuário admin criado, temos que criar um autor para o mesmo. Isso pode ser feito, com o admin logado, na tela de edição de cadastro. Após adicionar nome, sobrenome, biografia e imagem de perfil(opcional), o autor estará criado e podemos começar os testes.
-
-Os posts, para serem exibidos, necessitam da aprovação do administrador. Para isso, no painel do admin, devemos editar o campo "approved" para true.
-
 # Como executar o projeto:
 
 ## Sem Docker:
