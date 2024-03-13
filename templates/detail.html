@@ -55,7 +55,7 @@
         <div class="comments-container">
             <div class="body">
                 <div class="authors">
-                    <div class="username"><a href="">{{comment.user.full_name|title}}</a></div>
+                    <div class="username">{{comment.user.full_name|title}}</div>
                     {% if comment.user.profile_pic %}
                     <img src="{{comment.user.profile_pic.url}}" alt="">
                     {% endif %}
@@ -89,7 +89,7 @@
         <div class="comments-container" style = "width: 95%; margin-left: 5%;">
             <div class="body">
                 <div class="authors">
-                    <div class="username"><a href="">{{reply.user.full_name|title}}</a></div>
+                    <div class="username">{{reply.user.full_name|title}}</div>
                     {% if reply.user.profile_pic %}
                     <img src="{{reply.user.profile_pic.url}}" alt="">
                     {% endif %}
